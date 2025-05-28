@@ -72,9 +72,8 @@ fun GameScreen() {
             .safeDrawingPadding()
             .padding(mediumPadding),
         verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-
         Text(
             text = stringResource(R.string.app_name),
             style = typography.titleLarge,
@@ -96,49 +95,50 @@ fun GameScreen() {
                 .fillMaxWidth()
                 .padding(mediumPadding),
             verticalArrangement = Arrangement.spacedBy(mediumPadding),
-            horizontalAlignment = Alignment.CenterHorizontally
+            horizontalAlignment = Alignment.CenterHorizontally,
         ) {
-
             Button(
                 modifier = Modifier.fillMaxWidth(),
-                onClick = { gameViewModel.checkUserGuess() }
+                onClick = { gameViewModel.checkUserGuess() },
             ) {
                 Text(
                     text = stringResource(R.string.submit),
-                    fontSize = 16.sp
+                    fontSize = 16.sp,
                 )
             }
-
             OutlinedButton(
                 onClick = { gameViewModel.skipWord() },
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth(),
             ) {
                 Text(
                     text = stringResource(R.string.skip),
-                    fontSize = 16.sp
+                    fontSize = 16.sp,
                 )
             }
         }
         if (gameUiState.isGameOver) {
             FinalScoreDialog(
                 score = gameUiState.score,
-                onPlayAgain = { gameViewModel.resetGame() }
+                onPlayAgain = { gameViewModel.resetGame() },
             )
         }
-
-        GameStatus(score = gameUiState.score, modifier = Modifier.padding(20.dp))
+        GameStatus(
+            score = gameUiState.score,
+            modifier = Modifier.padding(20.dp),
+            )
     }
 }
 
 @Composable
-fun GameStatus(score: Int, modifier: Modifier = Modifier) {
-    Card(
-        modifier = modifier
-    ) {
+fun GameStatus(
+    score: Int,
+    modifier: Modifier = Modifier,
+) {
+    Card(modifier = modifier) {
         Text(
             text = stringResource(R.string.score, score),
             style = typography.headlineMedium,
-            modifier = Modifier.padding(8.dp)
+            modifier = Modifier.padding(8.dp),
         )
     }
 }
@@ -157,12 +157,12 @@ fun GameLayout(
 
     Card(
         modifier = modifier,
-        elevation = CardDefaults.cardElevation(defaultElevation = 5.dp)
+        elevation = CardDefaults.cardElevation(defaultElevation = 5.dp),
     ) {
         Column(
             verticalArrangement = Arrangement.spacedBy(mediumPadding),
             horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier.padding(mediumPadding)
+            modifier = Modifier.padding(mediumPadding),
         ) {
             Text(
                 modifier = Modifier
@@ -172,16 +172,16 @@ fun GameLayout(
                     .align(alignment = Alignment.End),
                 text = stringResource(R.string.word_count, wordCount),
                 style = typography.titleMedium,
-                color = colorScheme.onPrimary
+                color = colorScheme.onPrimary,
             )
             Text(
                 text = currentScrambledWord,
-                style = typography.displayMedium
+                style = typography.displayMedium,
             )
             Text(
                 text = stringResource(R.string.instructions),
                 textAlign = TextAlign.Center,
-                style = typography.titleMedium
+                style = typography.titleMedium,
             )
             OutlinedTextField(
                 value = userGuess,
@@ -207,7 +207,7 @@ fun GameLayout(
                 ),
                 keyboardActions = KeyboardActions(
                     onDone = { onKeyBoardDone() }
-                )
+                ),
             )
         }
     }
@@ -218,7 +218,7 @@ fun GameLayout(
 private fun FinalScoreDialog(
     score: Int,
     onPlayAgain: () -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     // 現在のContextを取得し、Activityに型変換、変数activityに代入
     val activity = (LocalContext.current as Activity)
