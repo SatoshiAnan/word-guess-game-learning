@@ -4,6 +4,7 @@ import com.example.unscramble.data.SCORE_INCREASE
 import com.example.unscramble.ui.GameViewModel
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
+import org.junit.Assert.assertTrue
 import org.junit.Test
 
 class GameViewModelTest {
@@ -32,5 +33,17 @@ class GameViewModelTest {
     // Javaでいうstaticフィールド・関数と同義
     companion object {
         private const val SCORE_AFTER_FIRST_CORRECT_ANSWER = SCORE_INCREASE
+    }
+
+    @Test
+    fun gameViewModel_IncorrectGuess_ErrorFlagSet() {
+        val incorrectPlayerWord = "and"
+
+        viewModel.updateUserGuess(incorrectPlayerWord)
+        viewModel.checkUserGuess()
+
+        val currentGameUiState = viewModel.uiState.value
+        assertEquals(0, currentGameUiState.score)
+        assertTrue(currentGameUiState.isGuessedWordWrong)
     }
 }
