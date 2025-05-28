@@ -24,10 +24,12 @@ class GameViewModel : ViewModel() {
         private set
 
     private lateinit var currentWord: String
+    lateinit var pickWord: String
     private var usedWords: MutableSet<String> = mutableSetOf()
 
     private fun pickRandomWordAndShuffle(): String {
-        currentWord = allWords.random()
+        pickWord = allWords.random()
+        currentWord = pickWord
         if (usedWords.contains(currentWord)) {
             return pickRandomWordAndShuffle()
         } else {
