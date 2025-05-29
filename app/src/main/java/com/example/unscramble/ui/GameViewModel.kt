@@ -71,7 +71,6 @@ class GameViewModel : ViewModel() {
                     isGuessedWordWrong = false,
                     currentScrambledWord = pickRandomWordAndShuffle(),
                     score = updatedScore,
-                    currentWordCount = currentState.currentWordCount.inc(), //  inc()関数: インクリメント
                     isGameOver = true,
                 )
             }
@@ -81,7 +80,7 @@ class GameViewModel : ViewModel() {
                     isGuessedWordWrong = false,
                     currentScrambledWord = pickRandomWordAndShuffle(),
                     score = updatedScore,
-                    currentWordCount = currentState.currentWordCount.inc(),
+                    currentWordCount = currentState.currentWordCount.inc(), //  inc()関数: インクリメント
                 )
             }
         }
