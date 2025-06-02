@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # word-guess-game
 This is an Android app for a word guessing game that uses ViewModel to manage state.
 It is a single player game that displays scrambled words. To play the game, the player has to make a
@@ -20,4 +19,3 @@ This code demonstrates the Android Architecture component- ViewModel and StateFl
 2. Download the sample.
 3. Import the sample into Android Studio.
 4. Build and run the sample.
->>>>>>> dfa5a0a (Initial commit)
