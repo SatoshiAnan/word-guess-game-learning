@@ -1,21 +1,6 @@
-# word-guess-game
-This is an Android app for a word guessing game that uses ViewModel to manage state.
-It is a single player game that displays scrambled words. To play the game, the player has to make a
-word using all the letters in the displayed scrambled word.
+# 概要
+Android Studio 学習用、およびGitHub 学習用に作成したアプリです。
+Google 公式のサンプルアプリ「[Unscramble app](https://github.com/google-developer-training/basic-android-kotlin-compose-training-unscramble)」をベースに、**ViewModel を導入して状態管理を改善**しました。
 
-This code demonstrates the Android Architecture component- ViewModel and StateFlow.
+状態やロジックを ViewModel に切り出すことで、アーキテクチャの分離、ライフサイクルへの強さ、テスト性の向上を図っています。
 
-
-## Pre-requisites
---------------
-* Experience with Kotlin syntax.
-* How to create and run a project in Android Studio.
-* How to create composable functions 
-
-
-## Getting Started
----------------
-1. Install Android Studio, if you don't already have it.
-2. Download the sample.
-3. Import the sample into Android Studio.
-4. Build and run the sample.
