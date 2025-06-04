@@ -69,7 +69,6 @@ class GameViewModel : ViewModel() {
             _uiState.update { currentState ->
                 currentState.copy(
                     isGuessedWordWrong = false,
-                    currentScrambledWord = pickRandomWordAndShuffle(),
                     score = updatedScore,
                     isGameOver = true,
                 )
