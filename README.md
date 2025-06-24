@@ -1,5 +1,5 @@
 # 概要
-Android Studio 学習用、およびGitHub 学習用に作成したアプリです。
+Android Studio 学習用、および GitHub 学習用に作成したアプリです。
 
 本アプリは、Android Developers の公式Codelab  
 [「Compose での ViewModel と状態」](https://developer.android.com/codelabs/basic-android-kotlin-compose-viewmodel-and-state?hl=ja)  
